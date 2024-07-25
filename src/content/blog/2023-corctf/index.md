@@ -12,7 +12,7 @@ corCTF 2023 was a CTF event organized by Crusader of Rust team and was held from
 
 In this challenge we are given tarball file to be download. It contains the source code of the web app that we can run as Docker using the Dockerfile provided.
 
-```Dockerfile
+```
 FROM node:18
 
 WORKDIR /app
@@ -45,7 +45,7 @@ At first I thought the query in the text box is just a normal JSON format. But a
 
 Knowing nothing about GraphQL, I do some research online on how GraphQL works and looking up if there are any known vulnerabilities. One of the features of GraphQL is batch querying[^1] where you can do several queries at the same time using only one HTTP request. Thus, this makes for a suitable attack vector for bruteforcing the pin combination[^2]. I then look to the `web.js` for more information of the app.
 
-```javascript
+```js
 import fastify from "fastify";
 import mercurius from "mercurius";
 import { randomInt } from "crypto";
@@ -144,17 +144,14 @@ retrying...
 retrying...
 retrying...
 retrying...
-retrying...
-retrying...
-retrying...
-retrying...
-retrying...
 flag: corctf{test}
 ```
 
 Running this in the challenge's instance we'll get the flag:
 
-> corctf{S T O N K S}
+```bash
+corctf{S T O N K S}
+```
 
 ## Fin
 

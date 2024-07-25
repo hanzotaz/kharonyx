@@ -107,6 +107,25 @@ const projects = (await getCollection("projects"))
           </li>
         </ul>
       </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">
+          Acknowledgement
+        </h5>
+        <article>
+          <p>
+            {SITE.NAME} is a made using Astro, and template by Mark Horn. You can
+            find the source code for this website on
+            <Link
+              href="https://github.com/markhorn-dev/astro-nano"
+              external
+              aria-label="Astro Nano template by Mark Horn"
+            >
+              GitHub
+            </Link>
+          </p>
+        </article>
+      </section>
     </div>
   </Container>
 </PageLayout>
