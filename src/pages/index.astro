@@ -7,12 +7,11 @@ import Link from "@components/Link.astro";
 import { SITE, HOME, SOCIALS } from "@consts";
 
 const blog = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+  .filter((post) => !post.data.sub)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const projects = (await getCollection("projects"))
-  .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 ---
@@ -115,13 +114,13 @@ const projects = (await getCollection("projects"))
         <article>
           <p>
             {SITE.NAME} is a made using Astro, and template by Mark Horn. You can
-            find the source code for this website on
+            find the source code for the template on
             <Link
               href="https://github.com/markhorn-dev/astro-nano"
               external
               aria-label="Astro Nano template by Mark Horn"
             >
-              GitHub
+              Github
             </Link>
           </p>
         </article>

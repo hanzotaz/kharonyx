@@ -12,7 +12,7 @@ corCTF 2023 was a CTF event organized by Crusader of Rust team and was held from
 
 In this challenge we are given tarball file to be download. It contains the source code of the web app that we can run as Docker using the Dockerfile provided.
 
-```
+```bash
 FROM node:18
 
 WORKDIR /app
